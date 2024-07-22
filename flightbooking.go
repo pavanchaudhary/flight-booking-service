@@ -1,17 +1,8 @@
 package main
 
+import "net/http"
+
 type flightId string
-
-type airportCode string
-
-// const (
-// 	AMD airportCode = "AMD",
-// 	HYD airportCode = "HYD",
-// 	BLR airportCode = "BLR",
-// 	DEL airportCode = "DEL",
-// 	BOM airportCode = "BOM",
-// 	CCU airportCode = "CCU",
-// )
 
 type flightClass string
 
@@ -42,5 +33,6 @@ type FlightsResponse struct {
 }
 
 func main() {
+	http.HandleFunc("/v1/flight/flights", fetchFlights)
 	return
 }
