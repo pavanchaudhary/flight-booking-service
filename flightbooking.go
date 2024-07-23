@@ -1,7 +1,5 @@
 package main
 
-import "net/http"
-
 type flightId string
 
 type flightClass string
@@ -33,6 +31,5 @@ type FlightsResponse struct {
 }
 
 func main() {
-	http.HandleFunc("/v1/flight/flights", fetchFlights)
-	return
+	setConfig()
 }
