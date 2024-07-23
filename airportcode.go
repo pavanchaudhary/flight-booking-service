@@ -1,5 +1,7 @@
 package main
 
+import "strings"
+
 type airportCode string
 
 const (
@@ -33,5 +35,5 @@ var airportCodeMap = map[string]airportCode{
 }
 
 func GetAirportCode(ac string) airportCode {
-	return airportCodeMap[ac]
+	return airportCodeMap[strings.ToLower(ac)]
 }
